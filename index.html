@@ -41,19 +41,33 @@
           <hr style="border: 1px solid white; width: 50%; margin: 1rem auto" />
           <p>Balade en mer autour de Fort Boyard</p>
         </div>
-      </section>
-      <section id="carousel-cards">
-        <div class="carousel">
-          <figure>
-            <img src="img/Nous.jpg" alt="Image 1" />
-            <img src="img/visite.jpg" alt="Image 2" />
-            <img src="img/voilier.JPG" alt="Image 3" />
-            <img src="img/enfant.jpg" alt="Image 4" />
-            <img src="img/personne.jpg" alt="Image 5" />
-            <img src="img/personne.jpg" alt="Image 5" />
-            <img src="img/personne.jpg" alt="Image 5" />
-            <img src="img/personne.jpg" alt="Image 5" />
-          </figure>
+    </section>
+
+
+
+    <section class="carousel-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card" data-bg="img/Nous.jpg">
+                    <img src="img/Nous.jpg" alt="Image 1" />
+              <h3>Nous</h3>
+            </div>
+            <div class="swiper-slide card" data-bg="img/FB_photo.JPG">
+              <img src="img/FB_photo.JPG" alt="Image 2" />
+              <h3>fort Boyard</h3>
+            </div>
+            <div class="swiper-slide card" data-bg="img/AIX.JPG">
+                <img src="img/AIX.JPG" alt="Image 3" />
+              <h3>il d'aix</h3>
+            </div>
+            <div class="swiper-slide card" data-bg="img/carte.jpg">
+                <img src="img/carte.jpg" alt="Image 3" />
+              <h3>carte hors saison</h3>
+            </div>
+          </div>
+          <!-- Boutons de navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
     </div>
@@ -72,18 +86,8 @@
         <p>&copy; 2023 Discovery Voile. Tous droits réservés.</p>
       </div>
     </footer>
-    <script src="js/script.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        slidesPerView: 1, // Nombre de cartes visibles
-        spaceBetween: 50, // Espacement entre les cartes
-        loop: true, // Boucle infinie
-        autoplay: {
-          delay: 1000, // Temps entre chaque transition (15 secondes)
-          disableOnInteraction: true, // Désactive les interactions utilisateur
-        },
-      });
-    </script>
+    <script src="js/swip.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

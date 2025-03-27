@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>Discovery Voile</title>
+  </head>
+  <body>
+    <div class="main-content">
+      <header>
+        <nav class="navbar">
+          <div class="logo">
+            <img src="img/logo.png" alt="Discovery Voile Logo" />
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#nos-balades">Nos Balades</a></li>
+            <li><a href="#a-la-carte">À la Carte</a></li>
+            <li><a href="#tarif">Tarif</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#reservation">Réservation</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="home">
+        <div class="home-content">
+          <h1>
+            <span>Discovery</span><br />
+            <span>Voile</span>
+          </h1>
+          <hr style="border: 1px solid white; width: 50%; margin: 1rem auto" />
+          <p>Balade en mer autour de Fort Boyard</p>
+        </div>
+      </section>
+      <section id="carousel-cards">
+        <div class="carousel">
+          <figure>
+            <img src="img/Nous.jpg" alt="Image 1" />
+            <img src="img/visite.jpg" alt="Image 2" />
+            <img src="img/voilier.JPG" alt="Image 3" />
+            <img src="img/enfant.jpg" alt="Image 4" />
+            <img src="img/personne.jpg" alt="Image 5" />
+            <img src="img/personne.jpg" alt="Image 5" />
+            <img src="img/personne.jpg" alt="Image 5" />
+            <img src="img/personne.jpg" alt="Image 5" />
+          </figure>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="img/logo.png" alt="Discovery Voile Logo" />
+        </div>
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank">Facebook</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Discovery Voile. Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1, // Nombre de cartes visibles
+        spaceBetween: 50, // Espacement entre les cartes
+        loop: true, // Boucle infinie
+        autoplay: {
+          delay: 1000, // Temps entre chaque transition (15 secondes)
+          disableOnInteraction: true, // Désactive les interactions utilisateur
+        },
+      });
+    </script>
+  </body>
+</html>

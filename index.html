@@ -23,12 +23,18 @@
             <img src="img/logo.png" alt="Discovery Voile Logo" />
           </div>
           <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#nos-balades">Nos Balades</a></li>
-            <li><a href="#a-la-carte">À la Carte</a></li>
-            <li><a href="#tarif">Tarif</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#reservation">Réservation</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="dropdown">
+              <a href="#balade">Nos Balades</a>
+              <ul class="dropdown-menu">
+                <li><a href="index1.html">Fort Boyard</a></li>
+                <li><a href="index2.html">Île d'Aix</a></li>
+              </ul>
+            </li>
+            <li><a href="index3.html">À la Carte</a></li>
+            <li><a href="index4.html">Tarif</a></li>
+            <li><a href="index5.html">Contact</a></li>
+            <li><a href="index6.html">Réservation</a></li>
           </ul>
         </nav>
       </header>
@@ -41,36 +47,49 @@
           <hr style="border: 1px solid white; width: 50%; margin: 1rem auto" />
           <p>Balade en mer autour de Fort Boyard</p>
         </div>
-    </section>
+      </section>
 
-
-
-    <section class="carousel-container">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide card" data-bg="img/Nous.jpg">
-                    <img src="img/Nous.jpg" alt="Image 1" />
-              <h3>Nous</h3>
-            </div>
-            <div class="swiper-slide card" data-bg="img/FB_photo.JPG">
-              <img src="img/FB_photo.JPG" alt="Image 2" />
-              <h3>fort Boyard</h3>
-            </div>
-            <div class="swiper-slide card" data-bg="img/AIX.JPG">
-                <img src="img/AIX.JPG" alt="Image 3" />
-              <h3>il d'aix</h3>
-            </div>
-            <div class="swiper-slide card" data-bg="img/carte.jpg">
-                <img src="img/carte.jpg" alt="Image 3" />
-              <h3>carte hors saison</h3>
-            </div>
+      <section class="carousel-container">
+        <div class="cards">
+          <div class="card">
+            <a href="index1.html">
+              <img src="img/FB_photo.JPG" alt="Fort Boyard" />
+              <h3>Fort Boyard</h3>
+            </a>
           </div>
-          <!-- Boutons de navigation -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="card">
+            <a href="index2.html">
+              <img src="img/AIX.JPG" alt="Île d'Aix" />
+              <h3>Île d'Aix</h3>
+            </a>
+          </div>
+          <div class="card">
+            <a href="index3.html">
+              <img src="img/carte.jpg" alt="Carte Hors Saison" />
+              <h3>Carte Hors Saison</h3>
+            </a>
+          </div>
         </div>
       </section>
     </div>
+    <section class="nous">
+      <div class="nous-content">
+          <h2>À propos de nous</h2>
+        <img src="img/Nous.jpg" alt="nous" />
+        <div id="TA_selfserveprop737" class="TA_selfserveprop"><ul id="XL3xRyJyVTPv" class="TA_links f6W1XjUD"><li id="I5P0F45LRM3" class="tcyx4Xzwlr"><a target="_blank" href="https://www.tripadvisor.fr/"><img src="https://www.tripadvisor.fr/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a></li></ul></div><script src="https://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=737&amp;locationId=7054187&amp;lang=fr&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=true&amp;display_version=2"></script></p>
+        <p>
+          Hervé est un professionnel, diplomé du brevet d'état de voile, avec
+          plus de 20 ans d'expérience dans l'apprentissage de la navigation
+          cotière. Le plasir et la joie qu'il mettra à vous faire découvrir le
+          milieu marin sera un gage de qualité et de bonne humeur.
+        </p>
+        <p>
+          Que vous soyez un marin chevronné ou un novice, nous avons quelque
+          chose à vous offrir. Rejoignez-nous pour une aventure mémorable sur
+          l'eau.
+        </p>
+      </div>
+    </section>
     <footer>
       <div class="footer-content">
         <div class="footer-logo">

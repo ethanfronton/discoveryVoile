@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Assure que le contenu occupe toute la hauteur de la fenêtre */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -27,14 +27,8 @@ body {
   text-decoration: underline;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: auto;
-}
-
 .logo img {
-  height: 100px; /* Ajustez la taille du logo si nécessaire */
+  height: 100px;
 }
 
 .nav-links {
@@ -48,47 +42,27 @@ body {
   margin: 0 1rem;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Style pour le menu déroulant */
 .nav-links .dropdown {
   position: relative;
 }
 
 .nav-links .dropdown-menu {
-  display: none; /* Masque le sous-menu par défaut */
+  display: none;
   position: absolute;
-  left: 0; /* Aligne le sous-menu avec l'élément parent */
-  top: 100%; /* Positionne le sous-menu en dessous de l'élément parent */
-  background-color: #333; /* Couleur de fond */
+  left: 0;
+  top: 100%;
+  background-color: #333;
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: 2px solid white; /* Barre horizontale */
-  width: 200px; /* Largeur du sous-menu */
+  border-top: 2px solid white;
+  width: 200px;
 }
 
 .nav-links .dropdown-menu li {
   padding: 10px 20px;
 }
 
-.nav-links .dropdown-menu li a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links .dropdown-menu li a:hover {
-  text-decoration: underline;
-}
-
-/* Affiche le sous-menu au survol */
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
@@ -105,9 +79,9 @@ body {
 }
 
 .home-content h1 {
-  border-bottom: 2px solid white; /* Ligne blanche sous le titre */
-  padding-bottom: 1rem; /* Espacement entre le titre et la ligne */
-  margin-bottom: 1rem; /* Espacement entre la ligne et le paragraphe */
+  border-bottom: 2px solid white;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .home-content p {
@@ -117,46 +91,49 @@ body {
 }
 
 .main-content {
-  flex: 1; /* Permet au contenu principal de s'étendre */
-  min-height: calc(
-    150vh - 100px
-  ); /* Ajustez la hauteur pour inclure le footer */
+  flex: 1;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
 }
+
 .carousel-container {
-  width: 60%; /* Largeur du conteneur */
-  height: auto; /* Ajuste automatiquement la hauteur */
-  margin: 0 auto; /* Centrer horizontalement */
-  transform: translateX(200px); /* Décale le conteneur de 50px vers la droite */
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  transform: translateX(200px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0; /* Réduit l'espacement interne */
-  margin-bottom: 20px; /* Réduit l'espace sous le carrousel */
+  padding: 20px 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .cards {
   display: flex;
-  gap: 20px; /* Espacement entre les cartes */
+  gap: 20px;
 }
 
 .card {
   flex: 1;
-  max-width: 300px; /* Largeur maximale des cartes */
+  max-width: 300px;
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre portée */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05); /* Agrandissement au survol */
+  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
-  height: 200px; /* Hauteur fixe pour les images */
-  object-fit: cover; /* Maintient le ratio d'aspect */
+  height: 200px;
+  object-fit: cover;
 }
 
 .card h3 {
@@ -169,9 +146,10 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
 footer {
-  background-color: #222; /* Fond sombre */
-  color: #fff; /* Texte blanc */
+  background-color: #222;
+  color: #fff;
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -186,7 +164,7 @@ footer {
 }
 
 .footer-logo img {
-  height: 80px; /* Taille ajustée du logo */
+  height: 80px;
   margin-bottom: 1rem;
 }
 
@@ -203,7 +181,7 @@ footer {
 }
 
 .footer-socials a:hover {
-  color: #f39c12; /* Couleur au survol */
+  color: #f39c12;
 }
 
 .footer-bottom {
@@ -216,8 +194,8 @@ footer {
 /* Styles pour les flèches de navigation */
 .swiper-button-next,
 .swiper-button-prev {
-  position: absolute; /* Position absolue pour les flèches */
-  top: 50%; /* Centré verticalement */
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
   color: white;
   background: rgba(0, 0, 0, 0.5);
@@ -228,73 +206,74 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10; /* Assurez-vous que les flèches sont au-dessus des diapositives */
+  z-index: 10;
   cursor: pointer;
 }
 
 .swiper-button-next {
-  right: 10px; /* Positionné à droite */
+  right: 10px;
 }
 
 .swiper-button-prev {
-  left: 10px; /* Positionné à gauche */
+  left: 10px;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.8); /* Couleur plus foncée au survol */
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* Style pour la section "nous" */
 .nous {
-  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
-  color: white; /* Texte blanc */
-  padding: 50px 20px; /* Espacement interne */
-  text-align: center; /* Centrer le contenu */
-  margin-top: 20px; /* Réduit l'espace au-dessus de la section "À propos de nous" */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .nous-content {
-  max-width: 1200px; /* Largeur maximale */
-  margin: 0 auto; /* Centrer horizontalement */
-  display: flex; /* Affiche les éléments en ligne */
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-  align-items: center; /* Aligne verticalement */
-  gap: 20px; /* Espacement entre les éléments */
-  text-align: left; /* Aligne le texte à gauche */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
 }
 
 .nous-content img {
-  flex: 0 0 10%; /* L'image occupe 30% de la largeur */
-  max-width: 50%; /* L'image ne dépasse pas la largeur de son conteneur */
-  height: auto; /* Maintenir le ratio d'aspect */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+  flex: 0 0 10%;
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nous-content div {
-  flex: 1; /* Le texte occupe le reste de l'espace */
+  flex: 1;
 }
 
 .nous-content h2 {
-  font-size: 2.5rem; /* Taille du titre */
-  margin-bottom: 20px; /* Espacement sous le titre */
-  text-transform: uppercase; /* Texte en majuscules */
-  border-bottom: 2px solid white; /* Ligne sous le titre */
-  display: inline-block; /* Ajuste la largeur de la ligne */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid white;
+  display: inline-block;
 }
 
 .nous-content p {
-  font-size: 1.2rem; /* Taille du texte */
-  line-height: 1.8; /* Hauteur de ligne pour une meilleure lisibilité */
-  margin: 10px 0; /* Espacement vertical */
-  text-align: justify; /* Justifie le texte */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 10px 0;
+  text-align: justify;
 }
 
 .nous-content p:first-of-type {
-  font-weight: bold; /* Met en gras le premier paragraphe */
+  font-weight: bold;
 }
 
 .nous-content p:last-of-type {
-  font-style: italic; /* Met en italique le dernier paragraphe */
+  font-style: italic;
 }

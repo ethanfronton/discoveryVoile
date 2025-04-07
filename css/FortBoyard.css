@@ -1,14 +1,3 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Assure que le contenu occupe toute la hauteur de la fenêtre */
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: url("../img/FortBoyard.JPG") no-repeat center center fixed;
-  background-size: cover;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -27,14 +16,8 @@ body {
   text-decoration: underline;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: auto;
-}
-
 .logo img {
-  height: 100px; /* Ajustez la taille du logo si nécessaire */
+  height: 100px;
 }
 
 .nav-links {
@@ -48,253 +31,415 @@ body {
   margin: 0 1rem;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Style pour le menu déroulant */
 .nav-links .dropdown {
   position: relative;
 }
 
 .nav-links .dropdown-menu {
-  display: none; /* Masque le sous-menu par défaut */
+  display: none;
   position: absolute;
-  left: 0; /* Aligne le sous-menu avec l'élément parent */
-  top: 100%; /* Positionne le sous-menu en dessous de l'élément parent */
-  background-color: #333; /* Couleur de fond */
+  left: 0;
+  top: 100%;
+  background-color: #333;
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: 2px solid white; /* Barre horizontale */
-  width: 200px; /* Largeur du sous-menu */
+  border-top: 2px solid white;
+  width: 200px;
+  border-radius: 20px;
 }
 
 .nav-links .dropdown-menu li {
-  padding: 10px 20px;
+  padding: 5px 15px; /* Réduction du padding vertical */
+  margin: 0; /* Suppression de tout espace supplémentaire */
 }
 
-.nav-links .dropdown-menu li a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links .dropdown-menu li a:hover {
-  text-decoration: underline;
-}
-
-/* Affiche le sous-menu au survol */
 .nav-links .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-.home-content {
-  font-family: "Boldonse", sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("../img/FortBoyard.JPG") no-repeat center center fixed;
+  background-size: cover;
   color: white;
-  position: absolute;
-  top: 50%;
-  left: 13%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 30px;
-}
-
-.home-content h1 {
-  border-bottom: 2px solid white; /* Ligne blanche sous le titre */
-  padding-bottom: 1rem; /* Espacement entre le titre et la ligne */
-  margin-bottom: 1rem; /* Espacement entre la ligne et le paragraphe */
-}
-
-.home-content p {
-  margin-top: 1rem;
-  font-size: 10px;
-  color: rgb(254, 254, 254);
 }
 
 .main-content {
-  flex: 1; /* Permet au contenu principal de s'étendre */
-  min-height: calc(
-    150vh - 100px
-  ); /* Ajustez la hauteur pour inclure le footer */
-}
-.carousel-container {
-  width: 60%; /* Largeur du conteneur */
-  height: auto; /* Ajuste automatiquement la hauteur */
-  margin: 0 auto; /* Centrer horizontalement */
-  transform: translateX(200px); /* Décale le conteneur de 50px vers la droite */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0; /* Réduit l'espacement interne */
-  margin-bottom: 20px; /* Réduit l'espace sous le carrousel */
-}
-
-.cards {
-  display: flex;
-  gap: 20px; /* Espacement entre les cartes */
-}
-
-.card {
   flex: 1;
-  max-width: 300px; /* Largeur maximale des cartes */
+  padding: 20px;
   text-align: center;
+}
+
+#home {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+h1 span {
+  display: block;
+  font-family: "Boldonse", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #ffcc00;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre portée */
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.card:hover {
-  transform: scale(1.05); /* Agrandissement au survol */
-}
-
-.card img {
-  width: 100%;
-  height: 200px; /* Hauteur fixe pour les images */
-  object-fit: cover; /* Maintient le ratio d'aspect */
-}
-
-.card h3 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.card a {
-  text-decoration: none;
-  color: inherit;
-}
-footer {
-  background-color: #222; /* Fond sombre */
-  color: #fff; /* Texte blanc */
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.footer-content {
+.carousel-container {
   display: flex;
-  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-logo img {
-  height: 80px; /* Taille ajustée du logo */
-  margin-bottom: 1rem;
-}
-
-.footer-socials {
-  margin-top: 1rem;
-}
-
-.footer-socials a {
-  color: #fff;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-socials a:hover {
-  color: #f39c12; /* Couleur au survol */
-}
-
-.footer-bottom {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #444;
-  padding-top: 1rem;
-}
-
-/* Styles pour les flèches de navigation */
-.swiper-button-next,
-.swiper-button-prev {
-  position: absolute; /* Position absolue pour les flèches */
-  top: 50%; /* Centré verticalement */
   transform: translateY(-50%);
-  color: white;
+}
+
+.carousel-controls button {
   background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
   padding: 10px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background 0.3s;
+}
+
+.carousel-controls button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-indicators {
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 10; /* Assurez-vous que les flèches sont au-dessus des diapositives */
+  margin-top: 10px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: gray;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-.swiper-button-next {
-  right: 10px; /* Positionné à droite */
+.carousel-indicators button.active {
+  background: #ffcc00;
 }
 
-.swiper-button-prev {
-  left: 10px; /* Positionné à gauche */
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.8); /* Couleur plus foncée au survol */
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-/* Style pour la section "nous" */
-.nous {
-  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
-  color: white; /* Texte blanc */
-  padding: 50px 20px; /* Espacement interne */
-  text-align: center; /* Centrer le contenu */
-  margin-top: 20px; /* Réduit l'espace au-dessus de la section "À propos de nous" */
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
-.nous-content {
-  max-width: 1200px; /* Largeur maximale */
-  margin: 0 auto; /* Centrer horizontalement */
-  display: flex; /* Affiche les éléments en ligne */
-  flex-wrap: nowrap; /* Empêche le retour à la ligne */
-  align-items: center; /* Aligne verticalement */
-  gap: 20px; /* Espacement entre les éléments */
-  text-align: left; /* Aligne le texte à gauche */
+/* Animation pour le menu hamburger */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
-.nous-content img {
-  flex: 0 0 10%; /* L'image occupe 30% de la largeur */
-  max-width: 50%; /* L'image ne dépasse pas la largeur de son conteneur */
-  height: auto; /* Maintenir le ratio d'aspect */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre portée */
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
 
-.nous-content div {
-  flex: 1; /* Le texte occupe le reste de l'espace */
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.nous-content h2 {
-  font-size: 2.5rem; /* Taille du titre */
-  margin-bottom: 20px; /* Espacement sous le titre */
-  text-transform: uppercase; /* Texte en majuscules */
-  border-bottom: 2px solid white; /* Ligne sous le titre */
-  display: inline-block; /* Ajuste la largeur de la ligne */
+
+/* Media query pour les écrans de largeur maximale de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    font-size: 14px; /* Réduction de la taille de la police */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .logo img {
+    height: 80px; /* Réduction de la taille du logo */
+  }
+
+  .home-content {
+    top: 40%; /* Ajustement de la position */
+    left: 50%;
+    font-size: 20px; /* Réduction de la taille de la police */
+  }
+
+  .carousel-container {
+    width: 100%;
+    transform: translateX(0);
+    padding: 10px 0;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .nous-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nous-content img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .nous-content h2 {
+    font-size: 2rem;
+  }
+
+  .nous-content p {
+    font-size: 1rem;
+  }
+
+  .video-container {
+    max-width: 100%;
+    border: 3px solid #1e90ff;
+  }
+
+  .video-section p {
+    font-size: 1rem;
+  }
+
+  .map iframe {
+    height: 400px; /* Réduction de la hauteur de la carte */
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    height: 60px;
+  }
+
+  .footer-socials a {
+    font-size: 1rem;
+  }
 }
 
-.nous-content p {
-  font-size: 1.2rem; /* Taille du texte */
-  line-height: 1.8; /* Hauteur de ligne pour une meilleure lisibilité */
-  margin: 10px 0; /* Espacement vertical */
-  text-align: justify; /* Justifie le texte */
+
+/* Media query pour les écrans de largeur maximale de 480px (téléphones) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 5px;
+  }
+
+  .home-content {
+    font-size: 16px;
+  }
+
+  .carousel-container {
+    padding: 5px 0;
+  }
+
+  .nous-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .nous-content p {
+    font-size: 0.9rem;
+  }
+
+  .video-section p {
+    font-size: 0.9rem;
+  }
+
+  .map iframe {
+    height: 300px;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+
+  .footer-socials a {
+    font-size: 0.9rem;
+  }
 }
 
-.nous-content p:first-of-type {
-  font-weight: bold; /* Met en gras le premier paragraphe */
-}
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed; /* Fixe la navbar en haut de l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la navbar reste au-dessus des autres éléments */
+    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre pour la navbar */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile */
+  }
 
-.nous-content p:last-of-type {
-  font-style: italic; /* Met en italique le dernier paragraphe */
+  .main-content {
+    margin-top: 80px; /* Ajoute un espace pour compenser la hauteur de la navbar */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Place le menu juste en dessous de la navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }

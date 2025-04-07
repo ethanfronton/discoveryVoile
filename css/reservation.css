@@ -1,0 +1,425 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Assure que le contenu occupe toute la hauteur de la fenêtre */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("../img/visite.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.logo img {
+  height: 100px; /* Ajustez la taille du logo si nécessaire */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le menu déroulant */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-menu {
+  display: none; /* Masque le sous-menu par défaut */
+  position: absolute;
+  left: 0; /* Aligne le sous-menu avec l'élément parent */
+  top: 100%; /* Positionne le sous-menu en dessous de l'élément parent */
+  background-color: #333; /* Couleur de fond */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 2px solid white; /* Barre horizontale */
+  width: 200px; /* Largeur du sous-menu */
+}
+
+.nav-links .dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Affiche le sous-menu au survol */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.col-md-12 {
+  background: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  padding: 20px; /* Espacement interne */
+  margin: 20px 0; /* Espacement externe (haut et bas) */
+  color: #333; /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police lisible */
+}
+
+.col-md-12 h5 {
+  font-size: 1.5rem; /* Taille du titre */
+  color: #0056b3; /* Couleur du texte */
+  text-transform: uppercase; /* Texte en majuscules */
+  margin-top: 10px; /* Réduit l'espace au-dessus */
+  margin-bottom: 10px; /* Réduit l'espace en dessous */
+  text-align: center; /* Centrer le titre */
+}
+
+.col-md-12 dl {
+  margin: 0;
+  padding: 0;
+}
+
+.col-md-12 dt {
+  font-weight: bold; /* Texte en gras */
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.col-md-12 dd {
+  margin-left: 0; /* Supprime le retrait par défaut */
+  margin-bottom: 5px; /* Réduit l'espacement entre les éléments */
+}
+
+.col-md-12 address {
+  font-style: normal; /* Supprime l'italique par défaut */
+  color: #555; /* Couleur légèrement grisée */
+  margin-top: 10px; /* Espacement au-dessus de l'adresse */
+}
+
+.icon {
+  font-size: 2rem; /* Taille de l'icône */
+  color: #0056b3; /* Couleur de l'icône */
+  margin-right: 10px; /* Espacement à droite de l'icône */
+}
+
+.box {
+  display: flex; /* Active le mode flexbox */
+  align-items: center; /* Aligne verticalement les éléments */
+  margin-bottom: 20px; /* Espacement entre les boîtes */
+}
+
+.box_left {
+  margin-right: 15px; /* Espacement entre l'icône et le contenu */
+}
+
+.box_cnt {
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+
+/* Styles pour le menu hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navbar responsive */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links li {
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+  
+    .nav-links .dropdown-menu {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  
+    .nav-links .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+  
+  /* Animation pour le menu hamburger */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  
+  /* Media query pour les écrans de largeur maximale de 768px (tablettes et téléphones) */
+  @media (max-width: 768px) {
+    body {
+      background-size: cover;
+      font-size: 14px; /* Réduction de la taille de la police */
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav-links li {
+      margin: 0;
+    }
+  
+    .logo img {
+      height: 80px; /* Réduction de la taille du logo */
+    }
+  
+    .home-content {
+      top: 40%; /* Ajustement de la position */
+      left: 50%;
+      font-size: 20px; /* Réduction de la taille de la police */
+    }
+  
+    .carousel-container {
+      width: 100%;
+      transform: translateX(0);
+      padding: 10px 0;
+    }
+  
+    .cards {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .card {
+      max-width: 100%;
+    }
+  
+    .nous-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nous-content img {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  
+    .nous-content h2 {
+      font-size: 2rem;
+    }
+  
+    .nous-content p {
+      font-size: 1rem;
+    }
+  
+    .video-container {
+      max-width: 100%;
+      border: 3px solid #1e90ff;
+    }
+  
+    .video-section p {
+      font-size: 1rem;
+    }
+  
+    .map iframe {
+      height: 400px; /* Réduction de la hauteur de la carte */
+    }
+  
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-logo img {
+      height: 60px;
+    }
+  
+    .footer-socials a {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  /* Media query pour les écrans de largeur maximale de 480px (téléphones) */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 0.5rem;
+    }
+  
+    .nav-links {
+      gap: 5px;
+    }
+  
+    .home-content {
+      font-size: 16px;
+    }
+  
+    .carousel-container {
+      padding: 5px 0;
+    }
+  
+    .nous-content h2 {
+      font-size: 1.5rem;
+    }
+  
+    .nous-content p {
+      font-size: 0.9rem;
+    }
+  
+    .video-section p {
+      font-size: 0.9rem;
+    }
+  
+    .map iframe {
+      height: 300px;
+    }
+  
+    footer {
+      padding: 1rem;
+    }
+  
+    .footer-socials a {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Navbar responsive */
+  @media (max-width: 768px) {
+    .navbar {
+      position: fixed; /* Fixe la navbar en haut de l'écran */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Assure que la navbar reste au-dessus des autres éléments */
+      background-color: rgba(0, 0, 0, 0.9); /* Fond sombre pour la navbar */
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile */
+    }
+  
+    .main-content {
+      margin-top: 80px; /* Ajoute un espace pour compenser la hauteur de la navbar */
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; /* Place le menu juste en dessous de la navbar */
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 1rem 0;
+      z-index: 1000;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links li {
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+  
+    .nav-links .dropdown-menu {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  
+    .nav-links .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  }
+  

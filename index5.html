@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    <form action="/submit-form" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <br><br>
-        <button type="submit">Send</button>
-    </form>
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>Discovery Voile</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo.png" alt="Discovery Voile Logo" class="show" />
+        </div>
+        <ul class="nav-links show">
+          <li><a href="index.html">Accueil</a></li>
+          <li class="dropdown">
+            <a href="#balade">Nos Balades</a>
+            <ul class="dropdown-menu">
+              <li><a href="index1.html">Fort Boyard</a></li>
+              <li><a href="index2.html">Île d'Aix</a></li>
+            </ul>
+          </li>
+          <li><a href="index3.html">À la Carte</a></li>
+          <li><a href="index4.html">Tarif</a></li>
+          <li><a href="index5.html">Contact</a></li>
+          <li><a href="index6.html">Réservation</a></li>
+        </ul>
+      </nav>
+    </header>

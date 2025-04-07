@@ -1,53 +1,155 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation - Discovery Voile</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>Discovery Voile</title>
+  </head>
+  <body>
     <header>
-        <h1>Réservation</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="reservation.html" class="active">Réservation</a></li>
-                <li><a href="contact.html">Contact</a></li>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo.png" alt="Discovery Voile Logo" class="show" />
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links show">
+          <li><a href="index.html">Accueil</a></li>
+          <li class="dropdown">
+            <a href="#balade">Nos Balades</a>
+            <ul class="dropdown-menu">
+              <li><a href="index1.html">Fort Boyard</a></li>
+              <li><a href="index2.html">Île d'Aix</a></li>
             </ul>
-        </nav>
+          </li>
+          <li><a href="index3.html">À la Carte</a></li>
+          <li><a href="index4.html">Tarif</a></li>
+          <li><a href="index5.html">Contact</a></li>
+          <li><a href="index6.html">Réservation</a></li>
+        </ul>
+      </nav>
     </header>
+    <section class="well-md well-md--inset-1 bg-primary">
+      <h1 class="text-center" style="font-size: 5em; color: white; text-align: center; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Réservation</h1>
+      <div class="container">
+        <div class="row flow-offset-2">
+          <!---------widget réservation-------->
+          <div
+            id="ConstellationWidgetContainer572b4513-4929-4a1c-ad26-2fc3f7595d6c"
+            style="width: 100%"
+            title="DISCOVERY VOILE FORT BOYARD"
+            data-id-projet="572b451349294a1cad262fc3f7595d6c"
+          >
+            Chargement en cours...
+          </div>
+          <script
+            type="text/javascript"
+            src="https://reservation.elloha.com/Scripts/widget-loader.min.js?v=42"
+          ></script>
+          <script type="text/javascript">
+            var constellationWidgetUrl572b451349294a1cad262fc3f7595d6c,
+              constellationTypeModule572b451349294a1cad262fc3f7595d6c;
+            constellationWidgetUrl572b451349294a1cad262fc3f7595d6c =
+              "https://reservation.elloha.com/Widget/BookingEngine/572b4513-4929-4a1c-ad26-2fc3f7595d6c?idoi=8420ad73-4c98-419e-a215-ba7af214692a&culture=fr-FR";
+            constellationTypeModule572b451349294a1cad262fc3f7595d6c = 1;
+            constellationWidgetLoad(
+              "ConstellationWidgetContainer572b4513-4929-4a1c-ad26-2fc3f7595d6c"
+            );
+            constellationWidgetAddEvent(window, "resize", function () {
+              constellationWidgetSetAppearance(
+                "ConstellationWidgetContainer572b4513-4929-4a1c-ad26-2fc3f7595d6c"
+              );
+            });
+          </script>
+          <!---------------->
 
-    <main>
-        <section>
-            <h2>Réservez votre expérience de voile</h2>
-            <form action="submit-reservation.php" method="post">
-                <label for="name">Nom complet :</label>
-                <input type="text" id="name" name="name" required>
+          <div class="col-md-12">
+            <!-- Box -->
+            <div class="box box--mod-1">
+              <div class="box_left">
+                <div class="icon icon-md icon-secondary fa-map-marker"></div>
+              </div>
+              <!-- Contact Info -->
+              <div class="box_cnt contact-info">
+                <dl>
+                  <dt>
+                    Renseignements / Réservations / Billeterie<br />
+                    <br />
+                    Kiosque discovery - la cabane rouge sur le port de
+                    boyardville - ile d’oleron - charente maritime<br />
 
-                <label for="email">Adresse e-mail :</label>
-                <input type="email" id="email" name="email" required>
+                    <br />
+                  </dt>
+                  <dd>
+                    Réservation possible dans tous les offices du pays marennes
+                    oleron et du pays royannais<br />
+                    <br /><br />
+                    <br />
+                    <br />
 
-                <label for="phone">Numéro de téléphone :</label>
-                <input type="tel" id="phone" name="phone" required>
+                    <address></address>
+                  </dd>
+                </dl>
+              </div>
+              <!-- END Contact Info -->
+            </div>
+            <h5 align="center">CLIQUEZ CI-DESSOUS POUR RESERVER EN LIGNE :</h5>
+            <div
+              id="ConstellationButtonContainer0ca3c6b3-7055-4119-ad55-1540c169c555"
+              style="width: 100%; text-align: center"
+              title="DISCOVERY VOILE FORT BOYARD"
+              data-id-projet="0ca3c6b370554119ad551540c169c555"
+            >
+              Chargement en cours...
+            </div>
+            <script
+              type="text/javascript"
+              src="https://reservation.elloha.com/Scripts/widget-loader.min.js?v=39"
+            ></script>
+            <script type="text/javascript">
+              var constellationWidgetUrl0ca3c6b370554119ad551540c169c555,
+                constellationTypeModule0ca3c6b370554119ad551540c169c555;
+              constellationWidgetUrl0ca3c6b370554119ad551540c169c555 =
+                "https://reservation.elloha.com/Widget/BookingButton/0ca3c6b3-7055-4119-ad55-1540c169c555?idoi=8420ad73-4c98-419e-a215-ba7af214692a&culture=fr-FR";
+              constellationTypeModule0ca3c6b370554119ad551540c169c555 = 3;
+              constellationBookingButtonLoad(
+                "ConstellationButtonContainer0ca3c6b3-7055-4119-ad55-1540c169c555"
+              );
+            </script>
+            <br />
+            <br />
+          </div>
+        </div>
+        <!-- END Box -->
+      </div>
 
-                <label for="date">Date de réservation :</label>
-                <input type="date" id="date" name="date" required>
+      <!--<script type="text/javascript" src="http://gadget.open-system.fr/widgets-libs/rel/noyau-1.0.min.js"></script>
+<script type="text/javascript">
+( function() {
+var widgetProduit = AllianceReseaux.Widget.Instance( "Produit", { idPanier:"YX9hYWE", idIntegration:288, langue:"fr", ui:"CF-OPBI-48532" } );
+widgetProduit.Initialise();
+})();
+</script>
 
-                <label for="participants">Nombre de participants :</label>
-                <input type="number" id="participants" name="participants" min="1" required>
-
-                <label for="message">Message ou demandes spéciales :</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Réserver</button>
-            </form>
-        </section>
-    </main>
+<div id="widget-produit-CF-OPBI-48532"></div>-->
+    </section>
 
     <footer>
-        <p>&copy; 2023 Discovery Voile. Tous droits réservés.</p>
+      <p>&copy; 2023 Discovery Voile. Tous droits réservés.</p>
     </footer>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -1,42 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Swiper script chargé !");
-  console.log("Swiper existe ?", typeof Swiper !== "undefined");
+const carouselContainer = document.querySelector(".carousel-container");
+const images = document.querySelectorAll(".carousel img");
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+const indicators = document.querySelectorAll(".carousel-indicators button");
 
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-    on: {
-      init: function () {
-        console.log("Swiper initialisé !");
-      },
-    },
+let currentIndex = 0;
+
+function updateCarousel() {
+  carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle("active", index === currentIndex);
   });
+}
 
-  // Gestion des clics pour appliquer l'image de fond
-  const slides = document.querySelectorAll(".swiper-slide");
-  slides.forEach((slide) => {
-    slide.addEventListener("click", () => {
-      const bgImage = slide.getAttribute("data-bg");
-      if (bgImage) {
-        document.body.style.backgroundImage = `url(${bgImage})`;
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundPosition = "center";
-      }
-    });
+prevButton.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel();
+});
+
+nextButton.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
+});
+
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener("click", () => {
+    currentIndex = index;
+    updateCarousel();
   });
-
-  console.log(swiper);
 });

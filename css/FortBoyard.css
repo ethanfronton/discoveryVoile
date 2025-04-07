@@ -250,7 +250,6 @@ p {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
 /* Media query pour les écrans de largeur maximale de 768px (tablettes et téléphones) */
 @media (max-width: 768px) {
   body {
@@ -349,7 +348,6 @@ p {
   }
 }
 
-
 /* Media query pour les écrans de largeur maximale de 480px (téléphones) */
 @media (max-width: 480px) {
   .navbar {
@@ -442,4 +440,51 @@ p {
   .nav-links .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+footer {
+  background-color: #222; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  padding: 2rem 1rem; /* Espacement interne */
+  text-align: center;
+  width: 100%; /* Assure que le footer prend toute la largeur */
+  margin: 0; /* Supprime les marges externes */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Largeur maximale pour centrer le contenu */
+  margin: 0 auto; /* Centre le contenu horizontalement */
+}
+
+.footer-logo img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.footer-socials {
+  margin-top: 1rem;
+}
+
+.footer-socials a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
 }

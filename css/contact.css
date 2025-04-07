@@ -1,95 +1,454 @@
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Assure que le contenu occupe toute la hauteur de la fenêtre */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("../img/IMG_130211.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.logo img {
+  height: 100px; /* Ajustez la taille du logo si nécessaire */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le menu déroulant */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-menu {
+  display: none; /* Masque le sous-menu par défaut */
+  position: absolute;
+  left: 0; /* Aligne le sous-menu avec l'élément parent */
+  top: 100%; /* Positionne le sous-menu en dessous de l'élément parent */
+  background-color: #333; /* Couleur de fond */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 2px solid white; /* Barre horizontale */
+  width: 200px; /* Largeur du sous-menu */
+}
+
+.nav-links .dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Affiche le sous-menu au survol */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.contact-section {
+  text-align: center;
+  padding: 50px 20px;
+  font-family: "Boldonse", sans-serif;
+}
+.contact-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fffcfc;
+}
+.contact-section p {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #ffffff;
+}
+.contact-info a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Assure que le contenu occupe toute la hauteur de la fenêtre */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url("../img/disco\ 024.JPG") no-repeat center center fixed;
-    background-size: cover;
   }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    color: white;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: auto;
-  }
-  
-  .logo img {
-    height: 100px; /* Ajustez la taille du logo si nécessaire */
-  }
-  
+
   .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 1rem;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Style pour le menu déroulant */
-  .nav-links .dropdown {
-    position: relative;
-  }
-  
-  .nav-links .dropdown-menu {
-    display: none; /* Masque le sous-menu par défaut */
+    display: none;
+    flex-direction: column;
     position: absolute;
-    left: 0; /* Aligne le sous-menu avec l'élément parent */
-    top: 100%; /* Positionne le sous-menu en dessous de l'élément parent */
-    background-color: #333; /* Couleur de fond */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
     padding: 0;
-    margin: 0;
-    list-style: none;
-    border-top: 2px solid white; /* Barre horizontale */
-    width: 200px; /* Largeur du sous-menu */
   }
-  
-  .nav-links .dropdown-menu li {
-    padding: 10px 20px;
-  }
-  
-  .nav-links .dropdown-menu li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links .dropdown-menu li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Affiche le sous-menu au survol */
+
   .nav-links .dropdown:hover .dropdown-menu {
     display: block;
   }
+}
+
+/* Animation pour le menu hamburger */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media query pour les écrans de largeur maximale de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    font-size: 14px; /* Réduction de la taille de la police */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .logo img {
+    height: 80px; /* Réduction de la taille du logo */
+  }
+
+  .home-content {
+    top: 40%; /* Ajustement de la position */
+    left: 50%;
+    font-size: 20px; /* Réduction de la taille de la police */
+  }
+
+  .carousel-container {
+    width: 100%;
+    transform: translateX(0);
+    padding: 10px 0;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .nous-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nous-content img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .nous-content h2 {
+    font-size: 2rem;
+  }
+
+  .nous-content p {
+    font-size: 1rem;
+  }
+
+  .video-container {
+    max-width: 100%;
+    border: 3px solid #1e90ff;
+  }
+
+  .video-section p {
+    font-size: 1rem;
+  }
+
+  .map iframe {
+    height: 400px; /* Réduction de la hauteur de la carte */
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    height: 60px;
+  }
+
+  .footer-socials a {
+    font-size: 1rem;
+  }
+}
+
+/* Media query pour les écrans de largeur maximale de 480px (téléphones) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 5px;
+  }
+
+  .home-content {
+    font-size: 16px;
+  }
+
+  .carousel-container {
+    padding: 5px 0;
+  }
+
+  .nous-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .nous-content p {
+    font-size: 0.9rem;
+  }
+
+  .video-section p {
+    font-size: 0.9rem;
+  }
+
+  .map iframe {
+    height: 300px;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+
+  .footer-socials a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed; /* Fixe la navbar en haut de l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure que la navbar reste au-dessus des autres éléments */
+    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre pour la navbar */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile */
+  }
+
+  .main-content {
+    margin-top: 80px; /* Ajoute un espace pour compenser la hauteur de la navbar */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Place le menu juste en dessous de la navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+footer {
+  background-color: #222; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  padding: 2rem 1rem; /* Espacement interne */
+  text-align: center;
+  width: 100%; /* Assure que le footer prend toute la largeur */
+  margin: 0; /* Supprime les marges externes */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Largeur maximale pour centrer le contenu */
+  margin: 0 auto; /* Centre le contenu horizontalement */
+}
+
+.footer-logo img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.footer-socials {
+  margin-top: 1rem;
+}
+
+.footer-socials a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+
+/* Style pour la section carte */
+.map {
+    background: linear-gradient(
+      135deg,
+      #ffffff,
+      #87ceeb
+    ); /* Dégradé de blanc vers bleu ciel */
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    margin: 40px auto;
+    width: 100%; /* S'assurer que la section prend toute la largeur */
+    max-width: 1600px; /* Augmenter la largeur maximale */
+  }
   
+  .map iframe {
+    width: 100%;
+    height: 600px; /* Hauteur augmentée pour correspondre à la largeur */
+    border: 5px solid #1e90ff; /* Bordure bleue autour de la carte */
+    border-radius: 10px; /* Coins arrondis pour la carte */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Ombre pour la carte */
+  }
